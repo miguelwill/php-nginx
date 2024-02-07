@@ -1,21 +1,22 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 ENV TERM=xterm \
     SHELL=bash \
     DEBIAN_FRONTEND=noninteractive \
     NODE_ENV=production \
-    PHP_VERSION=8.1 \
-    NODE_VERSION=19.x
+    PHP_VERSION=8.3 \
+    NODE_VERSION=20.x
 
 #install php
 RUN apt-get update && \
-    apt-get dist-upgrade -y && \
-    apt-get install -y \
+    apt-get dist-upgrade -y
+
+RUN apt-get install -y \
     bash supervisor nginx git curl sudo zip unzip xz-utils libxrender1 gnupg \
-    php php-apcu php-bz2 php-cli php-curl php-fpm php-gd \
-    php-php-gettext php-gmp php-imagick php-imap php-json php-mbstring php-zip \
-    php-memcached php-mongodb php-mysql php-pear php-redis php-xml php-intl php-soap \
-    php-sqlite3 php-dompdf php-fpdf php-bcmath php-opcache
+    php$PHP_VERSION php$PHP_VERSION-apcu php$PHP_VERSION-bz2 php$PHP_VERSION-cli php$PHP_VERSION-curl php$PHP_VERSION-fpm php$PHP_VERSION-gd \
+    php-php-gettext php$PHP_VERSION-gmp php-imagick php$PHP_VERSION-imap php$PHP_VERSION-mbstring php$PHP_VERSION-zip \
+    php$PHP_VERSION-memcached php$PHP_VERSION-mongodb php$PHP_VERSION-mysql php-pear php$PHP_VERSION-redis php$PHP_VERSION-xml php$PHP_VERSION-intl php$PHP_VERSION-soap \
+    php$PHP_VERSION-sqlite3 php-fpdf php$PHP_VERSION-bcmath php$PHP_VERSION-opcache
 
 #install node
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | sudo -E bash && \
