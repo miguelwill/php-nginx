@@ -1,11 +1,11 @@
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 ENV TERM=xterm \
     SHELL=bash \
     DEBIAN_FRONTEND=noninteractive \
     NODE_ENV=production \
-    PHP_VERSION=8.1 \
-    NODE_VERSION=19.x
+    PHP_VERSION=7.4 \
+    NODE_VERSION=18.x
 
 #install php
 RUN apt-get update && \
@@ -13,7 +13,7 @@ RUN apt-get update && \
     apt-get install -y \
     bash supervisor nginx git curl sudo zip unzip xz-utils libxrender1 gnupg \
     php php-apcu php-bz2 php-cli php-curl php-fpm php-gd \
-    php-php-gettext php-gmp php-imagick php-imap php-json php-mbstring php-zip \
+    php-gmp php-imagick php-imap php-json php-mbstring php-zip \
     php-memcached php-mongodb php-mysql php-pear php-redis php-xml php-intl php-soap \
     php-sqlite3 php-dompdf php-fpdf php-bcmath php-opcache
 
