@@ -11,5 +11,5 @@ mkdir -p $DIRS
 # Fix permissions
 chown -R www-data:www-data $DIRS
 
-# Working on src may take a long time so do it in background
-chown -R www-data:www-data src
+# Working on src may take a long time so do it in background, exclude public 
+chown -R www-data:www-data src/!(public)
