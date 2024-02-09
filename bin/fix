@@ -3,7 +3,7 @@ set -e
 
 cd /var/www
 
-DIRS="logs tmp .composer .yarn src/public"
+DIRS="logs tmp .composer .yarn"
 
 # Ensure directories existence
 mkdir -p $DIRS
@@ -12,4 +12,4 @@ mkdir -p $DIRS
 chown -R www-data:www-data $DIRS
 
 # Working on src may take a long time so do it in background, exclude public 
-chown -R www-data:www-data src/!(public)
+#chown -R www-data:www-data src
