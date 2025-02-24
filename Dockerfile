@@ -15,7 +15,7 @@ RUN apt-get update && \
     php php-apcu php-bz2 php-cli php-curl php-fpm php-gd \
     php-php-gettext php-gmp php-imagick php-imap php-json php-mbstring php-zip \
     php-memcached php-mongodb php-mysql php-pear php-redis php-xml php-intl php-soap \
-    php-sqlite3 php-dompdf php-fpdf php-bcmath php-opcache php-pgsql
+    php-sqlite3 php-dompdf php-fpdf php-bcmath php-opcache php-pgsql ssmtp
 
 #install node
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | sudo -E bash && \
