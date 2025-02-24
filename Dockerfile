@@ -16,7 +16,7 @@ RUN apt-get install -y \
     php$PHP_VERSION php$PHP_VERSION-apcu php$PHP_VERSION-bz2 php$PHP_VERSION-cli php$PHP_VERSION-curl php$PHP_VERSION-fpm php$PHP_VERSION-gd \
     php-php-gettext php$PHP_VERSION-gmp php-imagick php$PHP_VERSION-imap php$PHP_VERSION-mbstring php$PHP_VERSION-zip \
     php$PHP_VERSION-memcached php$PHP_VERSION-mongodb php$PHP_VERSION-mysql php-pear php$PHP_VERSION-redis php$PHP_VERSION-xml php$PHP_VERSION-intl php$PHP_VERSION-soap \
-    php$PHP_VERSION-sqlite3 php-fpdf php$PHP_VERSION-bcmath php$PHP_VERSION-opcache
+    php$PHP_VERSION-sqlite3 php-fpdf php$PHP_VERSION-bcmath php$PHP_VERSION-opcache php$PHP_VERSION-pgsql
 
 #install node
 RUN curl -sL https://deb.nodesource.com/setup_${NODE_VERSION} | sudo -E bash && \
